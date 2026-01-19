@@ -25,6 +25,7 @@ const MyProfile = React.lazy(() => import('./views/myprofile/MyProfile'))
 const StudentAcademicCalendar = React.lazy(() => import('./views/lms/StudentAcademicCalendar'))
 const StudentAcademicTimetable = React.lazy(() => import('./views/lms/StudentAcademicTimetable'))
 const StudentAcademicAttendance = React.lazy(() => import('./views/lms/StudentAcademicAttendance'))
+const StudentAcademicAssignments = React.lazy(() => import('./views/lms/StudentAcademicAssignments'))
 
 
 
@@ -75,7 +76,7 @@ const routes: Route[] = [
 
   { path: '/lms/timetable', name: 'Timetable', element: StudentAcademicTimetable },
   { path: '/lms/attendance', name: 'Attendance', element: StudentAcademicAttendance },
-  { path: '/lms/assignments', name: 'Assignments', element: Assignments },
+  { path: '/lms/assignments', name: 'Assignments', element: StudentAcademicAssignments },
   { path: '/lms/course-contents', name: 'Course Contents', element: CourseContents },
   { path: '/lms/course-materials', name: 'Course Materials', element: CourseMaterials },
   { path: '/lms/project', name: 'Project', element: Project },
