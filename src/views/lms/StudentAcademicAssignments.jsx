@@ -17,6 +17,10 @@ const StudentAcademicAssignments = () => {
   const [category, setCategory] = useState('COURSE_NAME')
   const [showAssignments, setShowAssignments] = useState(false)
 
+  // ✅ common student photo
+  const studentPhoto =
+    'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=300&q=80'
+
   const assignments = [
     {
       date: '01-09-2025',
@@ -44,40 +48,31 @@ const StudentAcademicAssignments = () => {
     },
   ]
 
-  const handleView = () => {
-    if (category === 'COURSE_NAME') {
-      setShowAssignments(true)
-    } else {
-      setShowAssignments(false)
-    }
-  }
-
   return (
     <>
       <CCard className="mb-3">
         <CCardHeader>
           <strong>Student Academic Assignments</strong>
         </CCardHeader>
+
         <CCardBody>
           <CTable bordered>
             <CTableBody>
               <CTableRow>
                 <CTableDataCell rowSpan={3} className="text-center" style={{ width: '12%' }}>
-                  <div
+                  <img
+                    src={studentPhoto}
+                    alt="Student"
                     style={{
                       width: 110,
                       height: 110,
                       borderRadius: '50%',
-                      background: '#f1f1f1',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 40,
+                      objectFit: 'cover',
+                      border: '4px solid #e9ecef',
                     }}
-                  >
-                    <i className="icofont-user-alt-5" />
-                  </div>
+                  />
                 </CTableDataCell>
+
                 <CTableDataCell colSpan={5}>
                   <strong>AJISH A</strong>
                 </CTableDataCell>
@@ -93,9 +88,11 @@ const StudentAcademicAssignments = () => {
                 <CTableDataCell>
                   ajisha2023@gmail.com | +91 98075 90786
                 </CTableDataCell>
+
                 <CTableDataCell>
                   <strong>Profile Category</strong>
                 </CTableDataCell>
+
                 <CTableDataCell colSpan={2}>
                   <CFormSelect
                     size="sm"
@@ -105,8 +102,9 @@ const StudentAcademicAssignments = () => {
                     <option value="COURSE_NAME">COURSE NAME</option>
                   </CFormSelect>
                 </CTableDataCell>
+
                 <CTableDataCell className="text-center">
-                  <CButton size="sm" onClick={handleView}>
+                  <CButton size="sm" onClick={() => setShowAssignments(true)}>
                     View
                   </CButton>
                 </CTableDataCell>
@@ -123,14 +121,15 @@ const StudentAcademicAssignments = () => {
             <CTable bordered small className="text-center">
               <CTableHead>
                 <CTableRow>
-                  <CTableHeaderCell style={{ width: 70 }}>Select</CTableHeaderCell>
-                  <CTableHeaderCell>Date Course Code With Name</CTableHeaderCell>
+                  <CTableHeaderCell>Select</CTableHeaderCell>
+                  <CTableHeaderCell>Date | Course</CTableHeaderCell>
                   <CTableHeaderCell>Assignment Title</CTableHeaderCell>
-                  <CTableHeaderCell>Last Date for Submission</CTableHeaderCell>
-                  <CTableHeaderCell>Submit Assignment</CTableHeaderCell>
+                  <CTableHeaderCell>Last Date</CTableHeaderCell>
+                  <CTableHeaderCell>Submit</CTableHeaderCell>
                   <CTableHeaderCell>Status</CTableHeaderCell>
                 </CTableRow>
               </CTableHead>
+
               <CTableBody>
                 {assignments.map((a, index) => (
                   <CTableRow key={index}>
@@ -149,9 +148,7 @@ const StudentAcademicAssignments = () => {
                     </CTableDataCell>
                     <CTableDataCell
                       className={
-                        a.submitted
-                          ? 'text-success fw-semibold'
-                          : 'text-danger fw-semibold'
+                        a.submitted ? 'text-success fw-semibold' : 'text-danger fw-semibold'
                       }
                     >
                       {a.status}

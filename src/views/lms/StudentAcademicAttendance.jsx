@@ -20,6 +20,10 @@ const StudentAcademicAttendance = () => {
   const chartRef = useRef(null)
   const chartInstance = useRef(null)
 
+  // ✅ Same image used in StudentAcademicTimetable.jsx
+  const studentPhoto =
+    'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=300&q=80'
+
   const courseWise = [
     { code: '23-2AA-11T', name: 'Course 1', total: 100, present: 63, percent: 63 },
     { code: '23-2AA-12E', name: 'Course 2', total: 100, present: 68, percent: 68 },
@@ -82,31 +86,30 @@ const StudentAcademicAttendance = () => {
 
   return (
     <>
+      {/* ================= STUDENT PROFILE ================= */}
       <CCard className="mb-3">
         <CCardHeader>
           <strong>Student Academic Attendance</strong>
         </CCardHeader>
+
         <CCardBody>
           <CTable bordered>
             <CTableBody>
               <CTableRow>
-                <CTableDataCell rowSpan={3} style={{ width: '12%' }} className="text-center">
-                  <div
+                <CTableDataCell rowSpan={3} className="text-center" style={{ width: '12%' }}>
+                  <img
+                    src={studentPhoto}
+                    alt="Student"
                     style={{
                       width: 110,
                       height: 110,
                       borderRadius: '50%',
-                      background: '#d0d0ff',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 30,
-                      fontWeight: 700,
+                      objectFit: 'cover',
+                      border: '4px solid #e9ecef',
                     }}
-                  >
-                    A
-                  </div>
+                  />
                 </CTableDataCell>
+
                 <CTableDataCell colSpan={5}>
                   <strong>AJISH A</strong>
                 </CTableDataCell>
@@ -122,9 +125,11 @@ const StudentAcademicAttendance = () => {
                 <CTableDataCell>
                   ajisha2023@gmail.com | +91 98075 90786
                 </CTableDataCell>
+
                 <CTableDataCell>
                   <strong>Profile Category</strong>
                 </CTableDataCell>
+
                 <CTableDataCell colSpan={2}>
                   <CFormSelect
                     size="sm"
@@ -137,6 +142,7 @@ const StudentAcademicAttendance = () => {
                     <option value="OVERALL">OVERALL</option>
                   </CFormSelect>
                 </CTableDataCell>
+
                 <CTableDataCell className="text-center">
                   <CButton size="sm" onClick={() => setVisibleSection(category)}>
                     View
@@ -148,6 +154,7 @@ const StudentAcademicAttendance = () => {
         </CCardBody>
       </CCard>
 
+      {/* ================= COURSE WISE ================= */}
       {visibleSection === 'COURSE_WISE' && (
         <CCard className="mb-3">
           <CCardHeader>Course Wise Attendance</CCardHeader>
@@ -162,6 +169,7 @@ const StudentAcademicAttendance = () => {
                   <CTableHeaderCell>Percentage</CTableHeaderCell>
                 </CTableRow>
               </CTableHead>
+
               <CTableBody>
                 {courseWise.map((c, i) => (
                   <CTableRow key={i}>
@@ -178,13 +186,19 @@ const StudentAcademicAttendance = () => {
             <h6 className="text-center mt-4">Attendance Percentage</h6>
             <canvas ref={chartRef} />
 
-            <CButton size="sm" color="secondary" className="mt-3" onClick={() => setVisibleSection(null)}>
+            <CButton
+              size="sm"
+              color="secondary"
+              className="mt-3"
+              onClick={() => setVisibleSection(null)}
+            >
               Close
             </CButton>
           </CCardBody>
         </CCard>
       )}
 
+      {/* ================= ABSENT LOG ================= */}
       {visibleSection === 'ABSENT_LOG' && (
         <CCard className="mb-3">
           <CCardHeader>Absent Log</CCardHeader>
@@ -198,6 +212,7 @@ const StudentAcademicAttendance = () => {
                   <CTableHeaderCell>Absent Period</CTableHeaderCell>
                 </CTableRow>
               </CTableHead>
+
               <CTableBody>
                 {absentLog.map((a, i) => (
                   <CTableRow key={i}>
@@ -210,13 +225,19 @@ const StudentAcademicAttendance = () => {
               </CTableBody>
             </CTable>
 
-            <CButton size="sm" color="secondary" className="mt-3" onClick={() => setVisibleSection(null)}>
+            <CButton
+              size="sm"
+              color="secondary"
+              className="mt-3"
+              onClick={() => setVisibleSection(null)}
+            >
               Close
             </CButton>
           </CCardBody>
         </CCard>
       )}
 
+      {/* ================= PRESENT MONTH ================= */}
       {visibleSection === 'PRESENT_MONTH' && (
         <CCard className="mb-3">
           <CCardHeader>Present Month</CCardHeader>
@@ -232,13 +253,19 @@ const StudentAcademicAttendance = () => {
               </CTableBody>
             </CTable>
 
-            <CButton size="sm" color="secondary" className="mt-3" onClick={() => setVisibleSection(null)}>
+            <CButton
+              size="sm"
+              color="secondary"
+              className="mt-3"
+              onClick={() => setVisibleSection(null)}
+            >
               Close
             </CButton>
           </CCardBody>
         </CCard>
       )}
 
+      {/* ================= OVERALL ================= */}
       {visibleSection === 'OVERALL' && (
         <CCard>
           <CCardHeader>Overall Attendance</CCardHeader>
@@ -254,7 +281,12 @@ const StudentAcademicAttendance = () => {
               </CTableBody>
             </CTable>
 
-            <CButton size="sm" color="secondary" className="mt-3" onClick={() => setVisibleSection(null)}>
+            <CButton
+              size="sm"
+              color="secondary"
+              className="mt-3"
+              onClick={() => setVisibleSection(null)}
+            >
               Close
             </CButton>
           </CCardBody>

@@ -26,6 +26,10 @@ const StudentAcademicCalendar = React.lazy(() => import('./views/lms/StudentAcad
 const StudentAcademicTimetable = React.lazy(() => import('./views/lms/StudentAcademicTimetable'))
 const StudentAcademicAttendance = React.lazy(() => import('./views/lms/StudentAcademicAttendance'))
 const StudentAcademicAssignments = React.lazy(() => import('./views/lms/StudentAcademicAssignments'))
+const StudentAcademicCourseContents = React.lazy(() => import('./views/lms/StudentAcademicCourseContents'))
+const StudentAcademicCourseMaterials = React.lazy(() => import('./views/lms/StudentAcademicCourseMaterials'))
+
+
 
 
 
@@ -77,8 +81,8 @@ const routes: Route[] = [
   { path: '/lms/timetable', name: 'Timetable', element: StudentAcademicTimetable },
   { path: '/lms/attendance', name: 'Attendance', element: StudentAcademicAttendance },
   { path: '/lms/assignments', name: 'Assignments', element: StudentAcademicAssignments },
-  { path: '/lms/course-contents', name: 'Course Contents', element: CourseContents },
-  { path: '/lms/course-materials', name: 'Course Materials', element: CourseMaterials },
+  { path: '/lms/course-contents', name: 'Course Contents', element: StudentAcademicCourseContents },
+  { path: '/lms/course-materials', name: 'Course Materials', element: StudentAcademicCourseMaterials },
   { path: '/lms/project', name: 'Project', element: Project },
   { path: '/lms/internship', name: 'Internship', element: Internship },
   { path: '/lms/training-programme', name: 'Training Programme', element: TrainingProgramme },
