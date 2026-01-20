@@ -28,6 +28,17 @@ const StudentAcademicAttendance = React.lazy(() => import('./views/lms/StudentAc
 const StudentAcademicAssignments = React.lazy(() => import('./views/lms/StudentAcademicAssignments'))
 const StudentAcademicCourseContents = React.lazy(() => import('./views/lms/StudentAcademicCourseContents'))
 const StudentAcademicCourseMaterials = React.lazy(() => import('./views/lms/StudentAcademicCourseMaterials'))
+const StudentAcademicProject = React.lazy(() => import('./views/lms/StudentAcademicProject'))
+const StudentAcademicInternship = React.lazy(() => import('./views/lms/StudentAcademicInternship'))
+const StudentAcademicTrainingProgramme = React.lazy(() => import('./views/lms/StudentAcademicTrainingProgramme'))
+// EXAMINATION (converted page)
+const StudentAcademicExamSchedule = React.lazy(() => import('./views/lms/StudentAcademicExamSchedule'))
+const StudentAcademicCiaMarks = React.lazy(() => import('./views/lms/StudentAcademicCiaMarks'))
+const StudentAcademicQuestionBank = React.lazy(() => import('./views/lms/StudentAcademicQuestionBank'))
+// ACADEMICS (converted page)
+const StudentAcademicsSeminarConferences = React.lazy(() => import('./views/lms/StudentAcademicsSeminarConferences'))
+
+
 
 
 
@@ -49,6 +60,11 @@ const TrainingProgramme = Placeholder('TrainingProgramme')
 const ExamSchedule = Placeholder('ExamSchedule')
 const CiaMarks = Placeholder('CiaMarks')
 const QuestionBank = Placeholder('QuestionBank')
+
+// Evaluation / Academics (placeholders)
+const SeminarConferences = Placeholder('SeminarConferences')
+const Training = Placeholder('Training')
+const CompetitiveExams = Placeholder('CompetitiveExams')
 
 const routes: Route[] = [
   { path: '/', exact: true, name: <Translation>{(t) => t('home')}</Translation> },
@@ -83,14 +99,19 @@ const routes: Route[] = [
   { path: '/lms/assignments', name: 'Assignments', element: StudentAcademicAssignments },
   { path: '/lms/course-contents', name: 'Course Contents', element: StudentAcademicCourseContents },
   { path: '/lms/course-materials', name: 'Course Materials', element: StudentAcademicCourseMaterials },
-  { path: '/lms/project', name: 'Project', element: Project },
-  { path: '/lms/internship', name: 'Internship', element: Internship },
-  { path: '/lms/training-programme', name: 'Training Programme', element: TrainingProgramme },
+  { path: '/lms/project', name: 'Project', element: StudentAcademicProject },
+  { path: '/lms/internship', name: 'Internship', element: StudentAcademicInternship },
+  { path: '/lms/training-programme', name: 'Training Programme', element: StudentAcademicTrainingProgramme },
 
   // Evaluation (matches _nav.tsx paths)
-  { path: '/evaluation/schedule', name: 'Exam Schedule', element: ExamSchedule },
-  { path: '/evaluation/cia-marks', name: 'CIA Marks', element: CiaMarks },
-  { path: '/evaluation/question-bank', name: 'Question Bank', element: QuestionBank },
+  { path: '/evaluation/schedule', name: 'Exam Schedule', element: StudentAcademicExamSchedule },
+  { path: '/evaluation/cia-marks', name: 'CIA Marks', element: StudentAcademicCiaMarks },
+  { path: '/evaluation/question-bank', name: 'Question Bank', element: StudentAcademicQuestionBank },
+
+  // Evaluation Academics (matches _nav.tsx paths)
+  { path: '/academics/seminar-conferences', name: 'Seminar Conferences', element: StudentAcademicsSeminarConferences },
+  { path: '/academics/training', name: 'Training', element: Training },
+  { path: '/academics/competitive-examinations', name: 'Competitive Exams', element: CompetitiveExams },
 ]
 
 export default routes
