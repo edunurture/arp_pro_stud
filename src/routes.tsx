@@ -36,13 +36,14 @@ const StudentAcademicExamSchedule = React.lazy(() => import('./views/lms/Student
 const StudentAcademicCiaMarks = React.lazy(() => import('./views/lms/StudentAcademicCiaMarks'))
 const StudentAcademicQuestionBank = React.lazy(() => import('./views/lms/StudentAcademicQuestionBank'))
 // ACADEMICS (converted page)
-const StudentAcademicsSeminarConferences = React.lazy(() => import('./views/lms/StudentAcademicsSeminarConferences'))
-
-
-
-
-
-
+const StudentAcademicSeminarConferences = React.lazy(() => import('./views/lms/StudentAcademicSeminarConferences'))
+const StudentAcademicTraining = React.lazy(() => import('./views/lms/StudentAcademicTraining'))
+const StudentAcademicCompetitiveExaminations = React.lazy(() => import('./views/lms/StudentAcademicCompetitiveExaminations'))
+const StudentAcademicAwardsMedals = React.lazy(() => import('./views/lms/StudentAcademicAwardsMedals'))
+const StudentAcademicPresentations = React.lazy(() => import('./views/lms/StudentAcademicPresentations'))
+const StudentAcademicPublications = React.lazy(() => import('./views/lms/StudentAcademicPublications'))
+const StudentAcademicMemberships = React.lazy(() => import('./views/lms/StudentAcademicMemberships'))
+//GREIVANCES (converted page)
 
 
 
@@ -56,15 +57,26 @@ const Project = Placeholder('Project')
 const Internship = Placeholder('Internship')
 const TrainingProgramme = Placeholder('TrainingProgramme')
 
-// Evaluation / Examination (placeholders)
+//  Examination (placeholders)
 const ExamSchedule = Placeholder('ExamSchedule')
 const CiaMarks = Placeholder('CiaMarks')
 const QuestionBank = Placeholder('QuestionBank')
 
-// Evaluation / Academics (placeholders)
+//  Academics (placeholders)
 const SeminarConferences = Placeholder('SeminarConferences')
 const Training = Placeholder('Training')
-const CompetitiveExams = Placeholder('CompetitiveExams')
+const CompetitiveExaminations = Placeholder('CompetitiveExaminations')
+const AwardsMedals = Placeholder('AwardsMedals')
+const Presentations = Placeholder('Presentations')
+const Publications = Placeholder('Publications')
+const Memberships = Placeholder('Memberships')
+
+// Greivances (placeholders)
+const Affidavits = Placeholder('Affidavits')
+const Compliants = Placeholder('Compliants')
+const ExaminationGrievances = Placeholder('ExaminationGrievances')
+const SexualHarassment = Placeholder('SexualHarassment')
+const OtherGrievances = Placeholder('OtherGrievances')
 
 const routes: Route[] = [
   { path: '/', exact: true, name: <Translation>{(t) => t('home')}</Translation> },
@@ -109,9 +121,21 @@ const routes: Route[] = [
   { path: '/evaluation/question-bank', name: 'Question Bank', element: StudentAcademicQuestionBank },
 
   // Evaluation Academics (matches _nav.tsx paths)
-  { path: '/academics/seminar-conferences', name: 'Seminar Conferences', element: StudentAcademicsSeminarConferences },
-  { path: '/academics/training', name: 'Training', element: Training },
-  { path: '/academics/competitive-examinations', name: 'Competitive Exams', element: CompetitiveExams },
+  { path: '/academics/seminar-conferences', name: 'Seminar Conferences', element: StudentAcademicSeminarConferences },
+  { path: '/academics/training', name: 'Training', element: StudentAcademicTraining },
+  { path: '/academics/competitive-examinations', name: 'Competitive Examinations', element: StudentAcademicCompetitiveExaminations },
+  { path: '/academics/awards-medals', name: 'Awards / Medals', element: StudentAcademicAwardsMedals },
+  { path: '/academics/presentations', name: 'Presentations', element: StudentAcademicPresentations },
+  { path: '/academics/publications', name: 'Publications', element: StudentAcademicPublications },
+  { path: '/academics/memberships', name: 'Memberships', element: StudentAcademicMemberships },
+
+  // Grievances (matches _nav.tsx paths)
+  { path: '/grievances/affidavits', name: 'Affidavits', element: Affidavits },
+  { path: '/grievances/compliants', name: 'Compliants', element: Compliants },
+  { path: '/grievances/examination-grievances', name: 'Examination Grievances', element: ExaminationGrievances },
+  { path: '/grievances/sexual-harassment', name: 'Sexual Harassment', element: SexualHarassment },
+  { path: '/grievances/other-grievances', name: 'Other Grievances', element: OtherGrievances },
+
 ]
 
 export default routes
