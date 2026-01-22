@@ -44,7 +44,11 @@ const StudentAcademicPresentations = React.lazy(() => import('./views/lms/Studen
 const StudentAcademicPublications = React.lazy(() => import('./views/lms/StudentAcademicPublications'))
 const StudentAcademicMemberships = React.lazy(() => import('./views/lms/StudentAcademicMemberships'))
 //GREIVANCES (converted page)
-
+const StudentAcademicAffidavits = React.lazy(() => import('./views/lms/StudentAcademicAffidavits'))
+const StudentAcademicCompliants = React.lazy(() => import('./views/lms/StudentAcademicCompliants'))
+const StudentAcademicExaminationGrievances = React.lazy(() => import('./views/lms/StudentAcademicExaminationGrievances'))
+const StudentAcademicSexualHarassment = React.lazy(() => import('./views/lms/StudentAcademicSexualHarassment'))
+const StudentAcademicOtherGrievances = React.lazy(() => import('./views/lms/StudentAcademicOtherGrievances'))
 
 
 // LMS (placeholders)
@@ -130,11 +134,11 @@ const routes: Route[] = [
   { path: '/academics/memberships', name: 'Memberships', element: StudentAcademicMemberships },
 
   // Grievances (matches _nav.tsx paths)
-  { path: '/grievances/affidavits', name: 'Affidavits', element: Affidavits },
-  { path: '/grievances/compliants', name: 'Compliants', element: Compliants },
-  { path: '/grievances/examination-grievances', name: 'Examination Grievances', element: ExaminationGrievances },
-  { path: '/grievances/sexual-harassment', name: 'Sexual Harassment', element: SexualHarassment },
-  { path: '/grievances/other-grievances', name: 'Other Grievances', element: OtherGrievances },
+  { path: '/grievances/affidavits', name: 'Affidavits', element: StudentAcademicAffidavits },
+  { path: '/grievances/compliants', name: 'Compliants', element: StudentAcademicCompliants },
+  { path: '/grievances/examination-grievances', name: 'Examination Grievances', element: StudentAcademicExaminationGrievances },
+  { path: '/grievances/sexual-harassment', name: 'Sexual Harassment', element: StudentAcademicSexualHarassment },
+  { path: '/grievances/other-grievances', name: 'Other Grievances', element: StudentAcademicOtherGrievances },
 
 ]
 
