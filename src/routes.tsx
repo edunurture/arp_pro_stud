@@ -49,6 +49,12 @@ const StudentAcademicCompliants = React.lazy(() => import('./views/lms/StudentAc
 const StudentAcademicExaminationGrievances = React.lazy(() => import('./views/lms/StudentAcademicExaminationGrievances'))
 const StudentAcademicSexualHarassment = React.lazy(() => import('./views/lms/StudentAcademicSexualHarassment'))
 const StudentAcademicOtherGrievances = React.lazy(() => import('./views/lms/StudentAcademicOtherGrievances'))
+//SCHOLARSHIPS (converted page)
+const StudentAcademicAddScholarship = React.lazy(() => import('./views/lms/StudentAcademicAddScholarship'))
+const StudentAcademicMOOCs = React.lazy(() => import('./views/lms/StudentAcademicMOOCs'))
+const StudentAcademicAddOnCourses = React.lazy(() => import('./views/lms/StudentAcademicAddOnCourses'))
+const StudentAcademicCertificateCourses = React.lazy(() => import('./views/lms/StudentAcademicCertificateCourses'))
+
 
 
 // LMS (placeholders)
@@ -81,6 +87,26 @@ const Compliants = Placeholder('Compliants')
 const ExaminationGrievances = Placeholder('ExaminationGrievances')
 const SexualHarassment = Placeholder('SexualHarassment')
 const OtherGrievances = Placeholder('OtherGrievances')
+
+//Scholarships (placeholders)
+const AddScholarship = Placeholder('AddScholarship')
+
+//Certifications (placeholders)
+const MOOCs = Placeholder('MOOCs')
+const AddOnCourses = Placeholder('AddOnCourses')
+const CertificateCourses = Placeholder('CertificateCourses')
+const DiplomaCourses = Placeholder('DiplomaCourses')
+
+//Extra Curricular (placeholders)
+const SportsActivities = Placeholder('SportsActivities')
+const CulturalActivities = Placeholder('CulturalActivities')
+
+//Placements (placeholders)
+const ViewSchedule = Placeholder('ViewSchedule')
+const ViewOffers = Placeholder('ViewOffers')
+
+
+
 
 const routes: Route[] = [
   { path: '/', exact: true, name: <Translation>{(t) => t('home')}</Translation> },
@@ -139,6 +165,23 @@ const routes: Route[] = [
   { path: '/grievances/examination-grievances', name: 'Examination Grievances', element: StudentAcademicExaminationGrievances },
   { path: '/grievances/sexual-harassment', name: 'Sexual Harassment', element: StudentAcademicSexualHarassment },
   { path: '/grievances/other-grievances', name: 'Other Grievances', element: StudentAcademicOtherGrievances },
+
+  //Scholarships (matches _nav.tsx paths)
+   { path: '/scholarships/add', name: 'Add Scholarship', element: StudentAcademicAddScholarship },
+
+   //Certifications (matches _nav.tsx paths)
+   { path: '/certifications/moocs', name: 'MOOCs', element: StudentAcademicMOOCs },
+   { path: '/certifications/add-on-courses', name: 'Add On Courses', element: StudentAcademicAddOnCourses },
+   { path: '/certifications/certificate-courses', name: 'Certificate Courses', element: StudentAcademicCertificateCourses },
+   { path: '/certifications/diploma-courses', name: 'Diploma Courses', element: DiplomaCourses },
+
+   // Extra Curricular (matches _nav.tsx paths)
+   { path: '/extra-curricular/sports-activities', name: 'Sports Activities', element: SportsActivities },
+   { path: '/extra-curricular/cultural-activities', name: 'Cultural Activities', element: CulturalActivities },
+
+   //Placements (matches _nav.tsx paths)
+   { path: '/placements/view-schedule', name: 'View Schedule', element: ViewSchedule },
+   { path: '/placements/view-offers', name: 'View Offers', element: ViewOffers},
 
 ]
 
