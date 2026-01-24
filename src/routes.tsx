@@ -54,6 +54,12 @@ const StudentAcademicAddScholarship = React.lazy(() => import('./views/lms/Stude
 const StudentAcademicMOOCs = React.lazy(() => import('./views/lms/StudentAcademicMOOCs'))
 const StudentAcademicAddOnCourses = React.lazy(() => import('./views/lms/StudentAcademicAddOnCourses'))
 const StudentAcademicCertificateCourses = React.lazy(() => import('./views/lms/StudentAcademicCertificateCourses'))
+const StudentAcademicDiplomaCourses = React.lazy(() => import('./views/lms/StudentAcademicDiplomaCourses'))
+const StudentAcademicSportsActivities = React.lazy(() => import('./views/lms/StudentAcademicSportsActivities'))
+const StudentAcademicCulturalActivities = React.lazy(() => import('./views/lms/StudentAcademicCulturalActivities'))
+const StudentAcademicViewSchedule = React.lazy(() => import('./views/lms/StudentAcademicViewSchedule'))
+const StudentAcademicViewOffers = React.lazy(() => import('./views/lms/StudentAcademicViewOffers'))
+
 
 
 
@@ -173,15 +179,15 @@ const routes: Route[] = [
    { path: '/certifications/moocs', name: 'MOOCs', element: StudentAcademicMOOCs },
    { path: '/certifications/add-on-courses', name: 'Add On Courses', element: StudentAcademicAddOnCourses },
    { path: '/certifications/certificate-courses', name: 'Certificate Courses', element: StudentAcademicCertificateCourses },
-   { path: '/certifications/diploma-courses', name: 'Diploma Courses', element: DiplomaCourses },
+   { path: '/certifications/diploma-courses', name: 'Diploma Courses', element: StudentAcademicDiplomaCourses },
 
    // Extra Curricular (matches _nav.tsx paths)
-   { path: '/extra-curricular/sports-activities', name: 'Sports Activities', element: SportsActivities },
-   { path: '/extra-curricular/cultural-activities', name: 'Cultural Activities', element: CulturalActivities },
+   { path: '/extra-curricular/sports-activities', name: 'Sports Activities', element: StudentAcademicSportsActivities },
+   { path: '/extra-curricular/cultural-activities', name: 'Cultural Activities', element: StudentAcademicCulturalActivities },
 
    //Placements (matches _nav.tsx paths)
-   { path: '/placements/view-schedule', name: 'View Schedule', element: ViewSchedule },
-   { path: '/placements/view-offers', name: 'View Offers', element: ViewOffers},
+   { path: '/placements/view-schedule', name: 'View Schedule', element: StudentAcademicViewSchedule },
+   { path: '/placements/view-offers', name: 'View Offers', element: StudentAcademicViewOffers},
 
 ]
 
